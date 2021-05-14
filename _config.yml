@@ -1,5 +1,5 @@
-title: Hacker theme
-description: Hacker is a theme for GitHub Pages.
-show_downloads: true
+title: Using python for data analysis
+description: Tutorial aimed at intermediate python users
+show_downloads: false
 google_analytics:
 theme: jekyll-theme-hacker
