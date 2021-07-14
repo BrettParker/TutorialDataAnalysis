@@ -6,6 +6,7 @@ import pandas as pd
 countriesDat = list() # read csv's into a list
 info = [] # so we know which csv's are in the list
 
+# read the csv's into a list in python 
 for i in glob.glob("/Users/s5001793/Documents/SWC/python/extra_practice/assets/files/*csv"):
     countriesDat.append(pd.read_csv(i))
     info.append(i)

@@ -20,8 +20,9 @@ for i in glob.glob("/Users/s5001793/Documents/SWC/python/extra_practice/assets/f
     countriesDat.append(pd.read_csv(i))
     info.append(i)
 ```
+The first dataset is life expentancy i.e. countriesDat[0] and the second is GDP i.e. countriesDat[1]
 
-## Lets explore the data
+## Lets explore the layout of the data
 ```python
 countriesDat
 ```
@@ -29,12 +30,17 @@ The year is projected to 2100, lets index it to 2020. Remember: iloc is for inde
 
 ```python
 for i in range(0,len(countriesDat)):
-    countriesDat[i].columns = 
-    countriesDat[i] = countriesDat[i].loc[:,:"2020"]
+    cols = countriesDat[i].loc[:,:"country"] # get the country name, which is in the first row
+    countriesDat[i].index = cols # add the country name to the index, i.e. the row name
+    countriesDat[i] = countriesDat[i].loc[:,"1800":"2020"] # subset the datasets between the years 1800 and 2020
 ```
+
+Lets have a look at the summary statistics for life expectancy across all countries.
+
 ```python
 countriesDat[0].describe()
 ```
+If you look at the min, max and mean, looks like they are all increasing, that a good sign. But there looks like there is a big difference between the min and the max.
 
 ## Order countries from richest to poorest
 Create a function that averages the 
